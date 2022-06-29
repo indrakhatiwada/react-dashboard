@@ -2,11 +2,27 @@ import React from 'react'
 import Profile from '../images/profile.png'
 import Salesanalytics from './Salesanalytics'
 function Right() {
+  const handleClick = ()=>{
+    const menu = document.getElementById('menu-btn')
+    const close = document.getElementById('close-btn')
+    const aside = document.querySelector('aside')
+
+    menu.addEventListener('click', ()=>{
+      aside.style.display = 'block';
+      close.style.display = 'block';
+    })
+    close.addEventListener('click', ()=>{
+      aside.style.display = 'none';
+      
+    });
+
+    
+  }
   return (
     <div className="right">
       <div className="top">
         <button id='menu-btn'>
-          <span class="material-symbols-sharp">
+          <span class="material-symbols-sharp" onClick={handleClick}>
             menu
           </span>
         </button>
